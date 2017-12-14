@@ -1,0 +1,13 @@
+.social-media a:hover > i {
+  color: #ffd740;
+  text-shadow: 2px 2px 5px black; }
+
+.header {
+  text-shadow: 2px 2px 5px #000; }
+
+.brand-logo {
+  padding-left: 10px !important; }
+
+.blur {
+  filter: blur(2px);
+  opacity: 0.8; }
