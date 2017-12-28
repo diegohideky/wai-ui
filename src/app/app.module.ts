@@ -9,6 +9,15 @@ import { AppComponent }     from './app.component';
 import { HomeComponent }    from './home/home.component';
 import { HeaderComponent }  from './header/header.component';
 import { FooterComponent }  from './footer/footer.component';
+import { LoginComponent }   from './login/login.component';
+import { SigninComponent }  from './signin/signin.component';
+import { AdminComponent }   from './admin/admin.component';
+import { UserComponent }    from './user/user.component';
+
+import { ApiService }       from './api/api.service';
+import { LoginService }     from './login/login.service';
+import { SigninService }    from './signin/signin.service';
+import { AdminService }     from './admin/admin.service';
 
 @NgModule({
   // Components
@@ -16,9 +25,13 @@ import { FooterComponent }  from './footer/footer.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    SigninComponent,
+    AdminComponent,
+    UserComponent
   ],
-  // Dependencies
+  // Dependences
   imports: [
     BrowserModule,
     FormsModule,
@@ -26,7 +39,12 @@ import { FooterComponent }  from './footer/footer.component';
     AppRoutingModule
   ],
   // Services
-  providers: [],
+  providers: [
+    ApiService,
+    LoginService,
+    SigninService,
+    AdminService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
