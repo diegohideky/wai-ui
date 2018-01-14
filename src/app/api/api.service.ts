@@ -27,42 +27,84 @@ export class ApiService {
       .catch(error => this.handleError(error));
   }
 
-  findContracts(): Promise<any> {
-    const url = this.host + '/api/contracts';
+  // SCHOOLS
+  findSchools(): Promise<any> {
+    const url = this.host + '/api/schools';
     return this.http
       .get(url, this.headers)
       .toPromise()
-      .then(response => response.json())
+      .then(response => response)
       .catch(error => this.handleError(error));
   }
 
-  insertContract(params: object): Promise<any> {
-    const url = this.host + '/api/contract';
+  insertSchool(params: object): Promise<any> {
+    const url = this.host + '/api/school';
     return this.http
       .post(url, params, this.headers)
       .toPromise()
-      .then(response => response.json())
+      .then(response => response)
       .catch(error => this.handleError(error));
   }
 
-  updateContract(params: object): Promise<any> {
-    const url = this.host + '/api/contract';
+  updateSchool(params: object): Promise<any> {
+    const url = this.host + '/api/school';
     return this.http
       .put(url, params, this.headers)
       .toPromise()
-      .then(response => response.json())
+      .then(response => response)
       .catch(error => this.handleError(error));
   }
 
-  removeContract(params: object): Promise<any> {
-    const url = this.host + '/api/contract';
+  removeSchool(params: object): Promise<any> {
+    const url = this.host + '/api/school';
     return this.http
       .delete(url, new RequestOptions({
         headers: this.headers,
         body: params
       }))
       .toPromise()
-      .then(response => response.json())
+      .then(response => response)
+      .catch(error => this.handleError(error));
+  }
+
+
+  // QUESTIONS
+  findQuestions(): Promise<any> {
+    const url = this.host + '/api/questions';
+    return this.http
+      .get(url, this.headers)
+      .toPromise()
+      .then(response => response)
+      .catch(error => this.handleError(error));
+  }
+
+  insertQuestion(params: object): Promise<any> {
+    const url = this.host + '/api/question';
+    return this.http
+      .post(url, params, this.headers)
+      .toPromise()
+      .then(response => response)
+      .catch(error => this.handleError(error));
+  }
+
+  updateQuestion(params: object): Promise<any> {
+    const url = this.host + '/api/question';
+    return this.http
+      .put(url, params, this.headers)
+      .toPromise()
+      .then(response => response)
+      .catch(error => this.handleError(error));
+  }
+
+  removeQuestion(params: object): Promise<any> {
+    const url = this.host + '/api/question';
+    return this.http
+      .delete(url, new RequestOptions({
+        headers: this.headers,
+        body: params
+      }))
+      .toPromise()
+      .then(response => response)
       .catch(error => this.handleError(error));
   }
 
@@ -96,4 +138,3 @@ export class ApiService {
       .catch(error => this.handleError(error));
   }
 }
-
