@@ -6,4 +6,5 @@ export class Question {
   alternatives: Alternative[];
   answerType: string;
   subject: string;
+  order: number;
 }

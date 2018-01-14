@@ -19,7 +19,8 @@ export class QuestionService {
       title: question.title,
       alternatives: question.alternatives,
       answerType: question.answerType,
-      subject: question.subject
+      subject: question.subject,
+      order: question.order
     };
     return this.apiService.insertQuestion(params);
   }

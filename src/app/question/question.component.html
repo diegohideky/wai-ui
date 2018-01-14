@@ -51,16 +51,21 @@
             </div>
 
             <div class="row">
-              <div class="input-field col s6">
+              <div class="input-field col s5">
                 <input placeholder="Tipo" id="anwerType" name="answerType" type="text"
                   class="validate" [(ngModel)]="question.answerType" required>
                 <label for="answerType">Tipo</label>
               </div>
 
-              <div class="input-field col s6">
+              <div class="input-field col s5">
                 <input placeholder="Assunto" id="subject" name="subject" type="text"
                   class="validate" [(ngModel)]="question.subject" required>
                 <label for="subject">Assunto</label>
+              </div>
+              <div class="input-field col s2">
+                <input placeholder="Ordem" id="order" name="order" type="text"
+                  class="validate" [(ngModel)]="question.order" required>
+                <label for="order">Ordem</label>
               </div>
             </div>
 
