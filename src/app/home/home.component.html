@@ -5,12 +5,17 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center indigo-text text-darken-2">Projeto WAI?</h1>
+        <h1 class="header center blue-text text-darken-4">Projeto WAI?</h1>
         <div class="row center">
           <h5 class="header col s12 light">"Onde seus talentos e paixões encontram as necessidades do mundo, este é seu caminho".</h5>
         </div>
         <div class="row center">
-          <a href="roadmap" class="btn-large waves-effect waves-light indigo darken-1 pulse">Comece Agora</a>
+          <a [routerLink]="['/colaborate']" class="btn-large waves-effect waves-light yellow darken-3">
+            <i class="fa fa-pencil"></i> Colabore
+          </a>
+          <a [routerLink]="['/consult']" class="btn-large waves-effect waves-light blue darken-3">
+            <i class="fa fa-search"></i> Consulte
+          </a>
         </div>
         <br><br>
       </div>
@@ -19,7 +24,7 @@
   </div>
 
   <!-- BASE -->
-  <div class="section scrollspy indigo" id="teste">
+  <div class="section scrollspy blue darken-4" id="teste">
     <div class="row">
       <div class="col l12 m12 s12 center-align grey-text text-darken-3">
         <h3 class="white-text">WAI?</h3>
@@ -83,21 +88,21 @@
   <div class="section container">
     <div class="row">
       <div class="col l4 m4 s4 center-align">
-        <p><i class="fa fa-bolt fa-4x indigo-text text-darken-2"></i></p>
+        <p><i class="fa fa-bolt fa-4x blue-text text-darken-4"></i></p>
         <div class="grey-text text-darken-3">
           <h4>Projeto WAI?</h4>
           <p>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
         </div>
       </div>
       <div class="col l4 m4 s4 center-align">
-        <p><i class="fa fa-info fa-4x indigo-text text-darken-2"></i></p>
+        <p><i class="fa fa-info fa-4x blue-text text-darken-4"></i></p>
         <div class="grey-text text-darken-3">
           <h4>Sobre</h4>
           <p>By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
         </div>
       </div>
       <div class="col l4 m4 s4 center-align">
-        <p><i class="fa fa-phone fa-4x indigo-text text-darken-2"></i></p>
+        <p><i class="fa fa-phone fa-4x blue-text text-darken-2"></i></p>
         <div class="grey-text text-darken-3">
           <h4>Contato</h4>
           <p>We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
