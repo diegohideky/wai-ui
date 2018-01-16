@@ -1,0 +1,153 @@
+<app-header></app-header>
+
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card z-depth-2">
+      <div class="card-content">
+        <span class="card-title">Formulário de Escola</span>
+
+        <div class="row">
+          <form class="col s12" (ngSubmit)="submitForm()">
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Nome" id="name" name="name" type="text"
+                  class="validate" [(ngModel)]="school.name" required>
+                <label for="name">Nome</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="IDH" id="idh" name="idh" type="text"
+                  class="validate" [(ngModel)]="school.idh" required>
+                <label for="idh">IDH</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input placeholder="Número de alunos" id="students" name="students"
+                  type="text" class="validate" [(ngModel)]="school.students" required>
+                <label for="students">Número de alunos</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input placeholder="CEP" id="postalCode" name="postalCode" type="text"
+                  class="validate" [(ngModel)]="school.postalCode" (blur)="searchPostalCode()">
+                <label for="postalCode">CEP</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s8">
+                <input placeholder="Endereço" id="address" name="address"
+                  type="text" class="validate" [(ngModel)]="school.address">
+                <label for="address">Endereço</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input placeholder="Número" id="number" name="number"
+                  type="text" class="validate" [(ngModel)]="school.number">
+                <label for="number">Número</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Complemento" id="complement" name="complement"
+                type="text" class="validate" [(ngModel)]="school.complement">
+                <label for="complement"></label>
+              </div>
+
+              <div class="input-field col s6">
+                <input placeholder="Bairro" id="neighborhood" name="neighborhood"
+                  type="text" class="validate" [(ngModel)]="school.neighborhood">
+                <label for="neighborhood"></label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s7">
+                <input placeholder="Cidade" id="city" name="city"
+                  type="text" class="validate" [(ngModel)]="school.city">
+                <label for="city">Cidade</label>
+              </div>
+
+              <div class="input-field col s2">
+                <input placeholder="Estado" id="state" name="state"
+                  type="text" class="validate" [(ngModel)]="school.state">
+                <label for="state">Estado</label>
+              </div>
+
+              <div class="input-field col s3">
+                <input placeholder="País" id="country" name="country"
+                  type="text" class="validate" [(ngModel)]="school.country">
+                <label for="country">País</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Latitude" id="lat" name="lat"
+                type="text" class="validate" [(ngModel)]="school.lat">
+                <label for="lat"></label>
+              </div>
+
+              <div class="input-field col s6">
+                <input placeholder="Longitude" id="lng" name="lng"
+                  type="text" class="validate" [(ngModel)]="school.lng">
+                <label for="lng">Longitude</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <button type="submit" class="waves-effect waves-light blue btn">
+                <i class="fa fa-check"></i> Salvar
+              </button>
+              <a class="waves-effect waves-light grey btn" (click)="cancel()">
+                <i class="fa fa-ban"></i> Cancelar
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6">
+    <table class="striped responsive-table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>IDH</th>
+          <th>Alunos</th>
+          <th>Cidade</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of schools">
+          <td>{{s.name}}</td>
+          <td>{{s.idh}}</td>
+          <td>{{s.students}}</td>
+          <td>{{s.city}}</td>
+          <td>
+            <a class="waves-effect waves-light yellow darken-3 btn-floating" (click)="edit(s)">
+              <i class="fa fa-pencil"></i>
+            </a>
+            <a class="waves-effect waves-light red btn-floating" (click)="remove(s)">
+              <i class="fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col s12 m12">
+
+  </div>
+</div>

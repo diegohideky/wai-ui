@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api/api.service';
-import { Signin }     from './signin';
+import { Signup }     from './signup';
 
 @Injectable()
-export class SigninService {
+export class SignupService {
 
   constructor(
     private apiService: ApiService
   ) { }
 
-  submit(signin: Signin): Promise<any> {
+  submit(signup: Signup): Promise<any> {
     const params = {
-      name: signin.name,
-      email: signin.email,
-      password: signin.password,
-      passwordRepeated: signin.passwordRepeated,
+      name: signup.name,
+      email: signup.email,
+      password: signup.password,
+      passwordRepeated: signup.passwordRepeated,
       role: 'USER',
       active: true
     };

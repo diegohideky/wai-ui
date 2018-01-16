@@ -1,0 +1,156 @@
+<app-header></app-header>
+
+<div class="row">
+  <div class="col s12">
+    <div class="card z-depth-2">
+      <div class="card-content">
+        <span class="card-title">Formulário de Perguntas</span>
+
+        <div class="row">
+          <form class="col s12" (ngSubmit)="submitForm()">
+            <!-- TITLE -->
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Título" id="title" name="title" type="text"
+                  class="validate" [(ngModel)]="question.title" required>
+                <label for="title">Título</label>
+              </div>
+            </div>
+
+            <!-- SECOND LINE -->
+            <div class="row">
+              <div class="input-field col s5">
+                <input placeholder="Tipo" id="anwerType" name="answerType" type="text"
+                  class="validate" [(ngModel)]="question.answerType" required>
+                <label for="answerType">Tipo</label>
+              </div>
+
+              <div class="input-field col s5">
+                <input placeholder="Assunto" id="subject" name="subject" type="text"
+                  class="validate" [(ngModel)]="question.subject" required>
+                <label for="subject">Assunto</label>
+              </div>
+              <div class="input-field col s2">
+                <input placeholder="Ordem" id="order" name="order" type="text"
+                  class="validate" [(ngModel)]="question.order" required>
+                <label for="order">Ordem</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- ALTERNATIVES -->
+              <div class="col s12 m6">
+                <div class="row">
+                  <div class="input-field col s5">
+                    <input placeholder="Texto" id="text" name="text" type="text"
+                      class="validate" [(ngModel)]="alternative.text" required>
+                    <label for="text">Texto</label>
+                  </div>
+                  <div class="input-field col s5">
+                    <input placeholder="Valor" id="value" name="value" type="text"
+                      class="validate" [(ngModel)]="alternative.value" required>
+                    <label for="value">Valor</label>
+                  </div>
+                  <div class="col s2">
+                    <a class="waves-effect waves-light blue darken-3 btn-floating" 
+                      (click)="addAlternative()">
+                      <i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+                </div>
+    
+                <div class="row" *ngFor="let a of question.alternatives">
+                  <div class="input-field col s6">
+                    <input placeholder="Texto" id="{{a.text}}-text"
+                      name="{{a.text}}-text" type="text"
+                      class="validate" [(ngModel)]="a.text">
+                    <label class="active" for="{{a.text}}-text">Texto</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input placeholder="Valor" id="{{a.value}}-value"
+                      name="{{a.value}}-value" type="text"
+                      class="validate" [(ngModel)]="a.value">
+                    <label class="active" for="{{a.value}}-value">Valor</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ATTRIBUTES -->
+              <div class="col s12 m6">
+                <div class="row">
+                  <div class="input-field col s8">
+                    <input placeholder="Atributo" id="attribute" name="attribute" type="text"
+                      class="validate" [(ngModel)]="attribute.name" required>
+                    <label for="attribute">Atributo</label>
+                  </div>
+                  <div class="col s4">
+                    <a class="waves-effect waves-light blue darken-3 btn-floating" 
+                      (click)="addAttribute()">
+                      <i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+                </div>
+    
+                <div class="row" *ngFor="let att of question.attributes">
+                  <div class="input-field col s12">
+                    <input placeholder="Attributo" id="{{att.name}}-name"
+                      name="{{att.name}}-name" type="text"
+                      class="validate" [(ngModel)]="att.name">
+                    <label class="active" for="{{att.name}}-name">Texto</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="row">
+              <button type="submit" class="waves-effect waves-light blue btn">
+                <i class="fa fa-check"></i> Salvar
+              </button>
+              <a class="waves-effect waves-light grey btn" (click)="cancel()">
+                <i class="fa fa-ban"></i> Cancelar
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <table class="striped responsive-table">
+      <thead>
+        <tr>
+          <th>Ordem</th>
+          <th>Título</th>
+          <th>Tipo</th>
+          <th>Assunto</th>
+          <th># Alternativas</th>
+          <th># Atributos</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let q of questions">
+          <td>{{q.order}}</td>
+          <td>{{q.title}}</td>
+          <td>{{q.answerType}}</td>
+          <td>{{q.subject}}</td>
+          <td>{{q.alternatives.length}}</td>
+          <td>{{q.attributes.length}}</td>
+          <td>
+            <a class="waves-effect waves-light yellow darken-3 white-text btn-flat" (click)="edit(q)">
+              <i class="fa fa-pencil"></i>
+            </a>
+            <a class="waves-effect waves-light red white-text btn-flat" (click)="remove(q)">
+              <i class="fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

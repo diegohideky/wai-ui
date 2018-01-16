@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
-import { Signin }            from './signin';
-import { SigninService }     from './signin.service';
+import { Signup }            from './signup';
+import { SignupService }     from './signup.service';
 
 declare var jquery: any;
 declare var $: any;
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class SigninComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
-  private signin: Signin;
+  private signup: Signup;
 
   constructor(
-    private signinService: SigninService,
+    private signupService: SignupService,
     private router: Router
   ) {}
 
   submitForm(): void {
-    console.log(this.signin);
-    this.signinService.submit(this.signin)
+    console.log(this.signup);
+    this.signupService.submit(this.signup)
       .then(data => {
         console.log(data);
         // if (data.user && data.user.role === 'ADMIN') {
@@ -37,6 +37,6 @@ export class SigninComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.signin = new Signin;
+    this.signup = new Signup;
   }
 }
