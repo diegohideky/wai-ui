@@ -9,76 +9,68 @@
 
           <div class="row">
 
-                  <div class="col s12 m6">
+            <div class="col s12 m6">
+              <div class="card-content black-text">
+                <span class="card-title"><h4><b>Colabore</b></h4></span>
+                <div>
+                  <h6 class="left-align"> <br>Está tentando ingressar em uma universidade?
+                  <br><br>
+                  Não sabe para onde ir?
+                  <br><br>
+                  Vem com a gente!
+                  <br><br>
+                  Você pode também ajudar outras pessoas!
+                  <br> <br>
+                  Envie-nos informações a respeito de sua universidade e cidade.</h6>
+                  <br><br>
+                </div>
+              </div>
+              <div class="card-action">
+                <a [routerLink]="['/colaborate']" class="btn-large waves-effect waves-light yellow">
+                  <i class="fa fa-pencil black-text"></i> <span class="black-text">COLABORE</span>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card-content">
+                  <span class="card-title"><h4><b>Universidades e Campus</b></h4></span>
+                  <br>
 
-                    
-                      <div class="card-content black-text">
-                      <span class="card-title"><h4><b>Colabore</b></h4></span>
-                      
-                      <div>
-                          <h6 class="left-align"> <br>Está tentando ingressar em uma universidade?
-                           <br><br>
-                              Não sabe para onde ir?
-                                 <br><br>
-                                Vem com a gente!
-                                <br><br>
-                               Você pode também ajudar outras pessoas!
-                               <br> <br>
-                               Envie-nos informações a respeito de sua universidade e cidade.</h6>
-                               <br><br>
-                      </div>
-                      </div>
-                      <div class="card-action">
-                        <a [routerLink]="['/colaborate']" class="btn-large waves-effect waves-light yellow">
-                          <i class="fa fa-pencil black-text"></i> <span class="black-text">COLABORE</span>
-                        </a>
-                      </div>
-                    
+                  <!-- INICIO DO FORMUlÁRIO -->
 
-                  </div>
+                  <div class="row">
+                    <form class="col s12 m12">
 
+                      <!-- CAMPO DENTRO DO FORMULÁRIO -->
 
-                <div class="row">
-                  <div class="col s12 m6">
-                    
-                      <div class="card-content">
-                        <span class="card-title"><h4><b>Universidades e Campus</b></h4></span>
-
-                          <br>
-
-                        <!-- INICIO DO FORMUlÁRIO -->
-                        <div class="row">
-                          <form class="col s12 m12">
-
-                            <!-- CAMPO DENTRO DO FORMULÁRIO -->
-                            <div class="row">
-                              <div class="input-field col s12">
-                                <input placeholder="Nome da Faculdade" id="college" name="college" type="text" class="validate">
-                                <label for="college">Nome da Faculdade: </label>
-                              </div>
-                            </div>
-
-                            <div class="row">
-                              <div class="input-field col s12">
-                                <input placeholder="Nome da Cidade" id="city" name="city" type="text" class="validate">
-                                <label for="city">Nome da Cidade: </label>
-                              </div>
-                            </div>
-
-                            <div class="row">
-                              <a [routerLink]="['/consult']" class="btn-large waves-effect waves-light indigo lighten-1">
-                                <i class="fa fa-search"></i> CONSULTE
-                              </a>
-
-                            </div>
-                          </form>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="Nome da Faculdade" id="college" name="college" type="text" class="validate">
+                          <label for="college">Nome da Faculdade: </label>
                         </div>
                       </div>
-                    
-                  </div>
+
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="Nome da Cidade" id="city" name="city" type="text" class="validate">
+                          <label for="city">Nome da Cidade: </label>
+                        </div>
                       </div>
 
-                    </div>
+                      <div class="row">
+                        <a [routerLink]="['/consult']" class="btn-large waves-effect waves-light indigo lighten-1">
+                          <i class="fa fa-search"></i> CONSULTE
+                        </a>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+          </div>
         </div>
         <br>
       </div>
@@ -87,28 +79,14 @@
   </div>
 
   <!-- BASE -->
+
   <div class="section scrollspy yellow" id="teste">
     <div class="row">
       <div class="col l12 m12 s12 center-align grey-text text-darken-3">
         <span class="black-text"><h4><b>Seja o melhor, no melhor lugar possível!</b></h4></span>
       </div>
-
-
-
-
-
     </div>
   </div>
-
-
-
-  <!-- BASE -->
-
-
-  <!-- SOCIAL MEDIA -->
-
-  <!-- Contato -->
-
 </div>
 
 <app-footer></app-footer>
