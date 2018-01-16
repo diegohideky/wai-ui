@@ -18,6 +18,7 @@ export class QuestionService {
     const params = {
       title: question.title,
       alternatives: question.alternatives,
+      attributes: question.attributes,
       answerType: question.answerType,
       subject: question.subject,
       order: question.order
@@ -30,6 +31,7 @@ export class QuestionService {
       _id: question._id,
       title: question.title,
       alternatives: question.alternatives,
+      attributes: question.attributes,
       answerType: question.answerType,
       subject: question.subject
     };

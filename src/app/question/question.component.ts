@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
-import { Question }            from './question';
-import { Alternative }            from './alternative';
-import { QuestionService }     from './question.service';
+import { Question }          from './question';
+import { Alternative }       from './alternative';
+import { Attribute }         from './attribute';
+
+import { QuestionService }   from './question.service';
 
 declare var jquery: any;
 declare var $: any;
@@ -19,6 +21,8 @@ export class QuestionComponent implements OnInit {
   private questions: Question[];
   private alternative: Alternative;
   private alternatives: Alternative[];
+  private attribute: Attribute;
+  private attributes: Attribute[];
   private message: string;
 
   constructor(
@@ -35,6 +39,8 @@ export class QuestionComponent implements OnInit {
 
             this.questions.push(data.question);
             this.question = new Question;
+            this.alternative = new Alternative;
+            this.attribute = new Attribute;
 
             this.message = data.message;
           } else {
@@ -52,6 +58,8 @@ export class QuestionComponent implements OnInit {
 
             this.questions[index] = data.question;
             this.question = new Question;
+            this.alternative = new Alternative;
+            this.attribute = new Attribute;
 
             this.message = data.message;
           } else {
@@ -91,14 +99,26 @@ export class QuestionComponent implements OnInit {
     this.alternative = new Alternative;
   }
 
+  addAttribute(): void {
+    if (!this.question.attributes) {
+      this.question.attributes = [this.attribute];
+    } else {
+      this.question.attributes.push(this.attribute);
+    }
+
+    this.attribute = new Attribute;
+  }
+
   cancel(): void {
     this.question = new Question;
     this.alternative = new Alternative;
+    this.attribute = new Attribute;
   }
 
   ngOnInit() {
-    this.question = new Question
+    this.question = new Question;
     this.alternative = new Alternative;
+    this.attribute = new Attribute;
 
     this.questionService.findAll()
       .then(res => {
@@ -112,5 +132,4 @@ export class QuestionComponent implements OnInit {
         }
       });
   }
-
 }
