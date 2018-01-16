@@ -10,16 +10,21 @@ import { HomeComponent }       from './home/home.component';
 import { HeaderComponent }     from './header/header.component';
 import { FooterComponent }     from './footer/footer.component';
 import { LoginComponent }      from './login/login.component';
-import { SigninComponent }     from './signin/signin.component';
+import { SignupComponent }     from './signup/signup.component';
 import { AdminComponent }      from './admin/admin.component';
 import { UserComponent }       from './user/user.component';
-
-import { ApiService }          from './api/api.service';
-import { LoginService }        from './login/login.service';
-import { SigninService }       from './signin/signin.service';
-import { AdminService }        from './admin/admin.service';
+import { SchoolComponent }     from './school/school.component';
 import { ColaborateComponent } from './colaborate/colaborate.component';
 import { ConsultComponent }    from './consult/consult.component';
+import { QuestionComponent } from './question/question.component';
+
+import { ApiService }          from './api/api.service';
+import { CepService }          from './api/cep.service';
+import { LoginService }        from './login/login.service';
+import { SignupService }       from './signup/signup.service';
+import { AdminService }        from './admin/admin.service';
+import { SchoolService }       from './school/school.service';
+import { QuestionService }     from './question/question.service';
 
 @NgModule({
   // Components
@@ -29,11 +34,13 @@ import { ConsultComponent }    from './consult/consult.component';
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    SigninComponent,
+    SignupComponent,
     AdminComponent,
     UserComponent,
     ColaborateComponent,
-    ConsultComponent
+    ConsultComponent,
+    SchoolComponent,
+    QuestionComponent
   ],
   // Dependences
   imports: [
@@ -45,9 +52,12 @@ import { ConsultComponent }    from './consult/consult.component';
   // Services
   providers: [
     ApiService,
+    CepService,
     LoginService,
-    SigninService,
-    AdminService
+    SignupService,
+    AdminService,
+    SchoolService,
+    QuestionService
   ],
   bootstrap: [AppComponent]
 })

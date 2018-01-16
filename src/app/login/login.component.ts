@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
           let data = res.json();
 
           if (data.user && data.user.role === 'ADMIN') {
-            this.router.navigateByUrl('/admin');
+            this.router.navigateByUrl('/school');
           } else if (data.user && data.user.role === 'USER') {
             this.router.navigateByUrl('/user');
           }
