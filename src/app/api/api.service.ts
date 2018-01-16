@@ -67,7 +67,6 @@ export class ApiService {
       .catch(error => this.handleError(error));
   }
 
-
   // QUESTIONS
   findQuestions(): Promise<any> {
     const url = this.host + '/api/questions';
