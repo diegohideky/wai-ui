@@ -1,15 +1,15 @@
 import { NgModule}              from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent }       from './login/login.component';
-import { SignupComponent }      from './signup/signup.component';
-import { AdminComponent }       from './admin/admin.component';
-import { UserComponent }        from './user/user.component';
-import { HomeComponent }        from './home/home.component';
-import { ColaborateComponent }  from './colaborate/colaborate.component';
-import { ConsultComponent }     from './consult/consult.component';
-import { SchoolComponent }      from './school/school.component';
-import { QuestionComponent }      from './question/question.component';
+import { LoginComponent }          from './login/login.component';
+import { SignupComponent }         from './signup/signup.component';
+import { AdminComponent }          from './admin/admin.component';
+import { UserComponent }           from './user/user.component';
+import { HomeComponent }           from './home/home.component';
+import { CollaborationComponent }  from './collaboration/collaboration.component';
+import { ConsultComponent }        from './consult/consult.component';
+import { SchoolComponent }         from './school/school.component';
+import { QuestionComponent }       from './question/question.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'user', component: UserComponent },
-  { path: 'colaborate', component: ColaborateComponent },
+  { path: 'collaboration', component: CollaborationComponent },
   { path: 'consult', component: ConsultComponent },
   { path: 'school', component: SchoolComponent },
   { path: 'question', component: QuestionComponent },

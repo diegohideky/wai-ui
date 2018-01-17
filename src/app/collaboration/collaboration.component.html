@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card z-depth-3">
+        <div class="card-content">
+          <div *ngIf="selectedSubject === 'STUDENT'">
+            <span class="card-title"><b>Projeto WAI?</b></span>
+            <p>Somos da WAI?, um  projeto que tem como objetivo auxiliar os vestibulandos na escolha de sua Universidade dos sonhos, por isso precisamos da sua ajuda para identificar os perfis e embasar as escolhas dos seus futuros calouros. </p>    
+          </div>
+          
+          <div *ngIf="selectedSubject === 'CITY'">
+            <h5> <b> Sobre sua cidade </b> </h5>
+          </div>
+
+          <div *ngIf="selectedSubject === 'COLLEGE'">
+            <h5> <b> Sobre sua Universidade </b></h5>
+          </div>
+          
+          <br>
+
+          <div class="row">
+
+            <form class="col s12" (ngSubmit)="submitForm()">
+              <div class="row" *ngFor="let a of collaboration.answers">
+                
+                <!-- TYPING -->
+                <div class="input-field col s12" *ngIf="a.question.answerType === 'TYPING' && a.question.subject === selectedSubject">
+                  <input placeholder="{{a.question.title}}" id="{{a.question.title}}" name="{{a.question.title}}" 
+                    type="text" class="validate" [(ngModel)]="a.typed">
+                  <label for="{{a.question.title}}">{{a.question.title}} </label>
+                </div>
+                
+                <!-- SINGLE -->
+                <div *ngIf="a.question.answerType === 'SINGLE' && a.question.subject === selectedSubject">
+                  <h6 class="grey-text text-darken-1">{{a.question.title}}</h6>  
+                  
+                  <p *ngFor="let alt of a.question.alternatives">
+                    <input class="with-gap" name="{{a.question.title}}-group" [value]="alt.value" 
+                      type="radio" id="{{a.question.title}}-{{alt.text}}" (click)="selectSingle(a, alt)">
+                    <label for="{{a.question.title}}-{{alt.text}}">{{alt.text}}</label>
+                  </p>
+                </div>
+                
+                <!-- MULTIPLE -->
+                <div *ngIf="a.question.answerType === 'MULTIPLE' && a.question.subject === selectedSubject">
+                  <h6 class="grey-text text-darken-1">{{a.question.title}}</h6>
+                  
+                  <p *ngFor="let alt of a.question.alternatives">
+                    <input class="filled-in" type="checkbox" id="{{a.question.title}}-{{alt.text}}" 
+                      (click)="selectMultiple(a, alt)"/>
+                    <label for="{{a.question.title}}-{{alt.text}}">{{alt.text}}</label>
+                  </p>
+                </div>
+                
+              </div>
+              
+              <div class="row">
+                <button type="button" name="next" class="waves-effect waves-light yellow black-text btn"
+                  (click)="previousForm()" *ngIf="index > 0">
+                  <i class="fa fa-angle-left black-text"></i> Anterior
+                </button>
+              
+                <button type="button" name="next" class="waves-effect waves-light yellow black-text btn right"
+                  (click)="nextForm()" *ngIf="index < (this.subjects.length - 1)">
+                  Próximo <i class="fa fa-angle-right"></i>
+                </button>
+            
+                <button type="submit" name="submit" class="waves-effect waves-light blue darken-3 btn right"
+                  *ngIf="index === (this.subjects.length - 1)">
+                  <i class="fa fa-paper-plane"></i> Enviar
+                </button>
+              </div>
+            </form>          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

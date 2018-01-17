@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="row">
-  <div class="col s12 m6">
+  <div class="col s12">
     <div class="card z-depth-2">
       <div class="card-content">
         <span class="card-title">Formulário de Escola</span>
@@ -113,8 +113,10 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="col s12 m6">
+<div class="row">
+  <div class="col s12">
     <table class="striped responsive-table">
       <thead>
         <tr>
@@ -132,10 +134,10 @@
           <td>{{s.students}}</td>
           <td>{{s.city}}</td>
           <td>
-            <a class="waves-effect waves-light yellow darken-3 btn-floating" (click)="edit(s)">
+            <a class="waves-effect waves-light yellow darken-3 white-text btn-flat" (click)="edit(s)">
               <i class="fa fa-pencil"></i>
             </a>
-            <a class="waves-effect waves-light red btn-floating" (click)="remove(s)">
+            <a class="waves-effect waves-light red white-text btn-flat" (click)="remove(s)">
               <i class="fa fa-trash"></i>
             </a>
           </td>

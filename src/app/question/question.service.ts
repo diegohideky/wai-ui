@@ -33,7 +33,8 @@ export class QuestionService {
       alternatives: question.alternatives,
       attributes: question.attributes,
       answerType: question.answerType,
-      subject: question.subject
+      subject: question.subject,
+      order: question.order
     };
     return this.apiService.updateQuestion(params);
   }
