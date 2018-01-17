@@ -107,6 +107,46 @@ export class ApiService {
       .catch(error => this.handleError(error));
   }
 
+  // Collaboration
+  findCollaborations(): Promise<any> {
+    const url = this.host + '/api/collaborations';
+    return this.http
+      .get(url, this.headers)
+      .toPromise()
+      .then(response => response)
+      .catch(error => this.handleError(error));
+  }
+
+  insertCollaboration(params: object): Promise<any> {
+    const url = this.host + '/api/collaboration';
+    return this.http
+      .post(url, params, this.headers)
+      .toPromise()
+      .then(response => response)
+      .catch(error => this.handleError(error));
+  }
+
+  updateCollaboration(params: object): Promise<any> {
+    const url = this.host + '/api/collaboration';
+    return this.http
+      .put(url, params, this.headers)
+      .toPromise()
+      .then(response => response)
+      .catch(error => this.handleError(error));
+  }
+
+  removeCollaboration(params: object): Promise<any> {
+    const url = this.host + '/api/collaboration';
+    return this.http
+      .delete(url, new RequestOptions({
+        headers: this.headers,
+        body: params
+      }))
+      .toPromise()
+      .then(response => response)
+      .catch(error => this.handleError(error));
+  }
+
   logIn(params: object): Promise<any> {
     const url = this.host + '/api/login';
     return this.http
