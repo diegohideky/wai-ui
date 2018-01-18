@@ -21,6 +21,7 @@ export class CollaborationService {
   insert(collaboration: Collaboration): Promise<any> {
     const params = {
       collaborator: collaboration.collaborator,
+      datetime: new Date(),
       answers: collaboration.answers
     };
     return this.apiService.insertCollaboration(params);
@@ -30,6 +31,7 @@ export class CollaborationService {
     const params = {
       _id: collaboration._id,
       collaborator: collaboration.collaborator,
+      datetime: new Date(),
       answers: collaboration.answers
     };
     return this.apiService.updateCollaboration(params);

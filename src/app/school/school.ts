@@ -1,3 +1,5 @@
+import { Attribute } from './attribute';
+
 export class School {
   _id: string;
   name: string;
@@ -13,4 +15,5 @@ export class School {
   country: string;
   lat: number;
   lng: number;
+  attributes: Attribute[];  
 }

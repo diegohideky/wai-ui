@@ -86,7 +86,6 @@ export class SchoolComponent implements OnInit {
   }
 
   searchPostalCode(): void {
-
     this.schoolService.searchPostalCode(this.school.postalCode)
       .then(res => {
         if (res.status === 200) {
@@ -103,6 +102,7 @@ export class SchoolComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.schools = [];
     this.school = new School;
 
     this.school.country = 'Brasil';

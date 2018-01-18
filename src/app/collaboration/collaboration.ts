@@ -4,5 +4,6 @@ export class Collaboration {
   _id: string;
   collaborator: string;
   school: string;
+  datetime: Date;
   answers: Answer[];
 }
